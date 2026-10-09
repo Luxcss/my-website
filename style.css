@@ -1,25 +1,312 @@
+
+/* ===== 1. BASIC SETTINGS ===== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 body {
-    background: #111827;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1120;
+    color: #f1f5f9;
+    line-height: 1.7;
 }
 
-h1 {
-    font-size: 50px;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-p {
-    font-size: 20px;
+section {
+    padding: 90px 8%;
 }
 
+/* ===== 2. NAVIGATION BAR ===== */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 18px 8%;
+    background: rgba(11, 17, 32, 0.95);
+    border-bottom: 1px solid #263247;
+}
+
+nav h2 {
+    color: #a5b4fc;
+    font-size: 26px;
+}
+
+nav div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: #cbd5e1;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #a5b4fc;
+}
+
+/* ===== 3. HOME SECTION ===== */
+
+#home {
+    min-height: 78vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #25235a 0,
+            transparent 38%
+        );
+}
+
+#home > p:first-child {
+    color: #a5b4fc;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+#home h1 {
+    font-size: clamp(44px, 8vw, 82px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+#home h2 {
+    font-size: clamp(19px, 3vw, 28px);
+    color: #cbd5e1;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+#home > p:not(:first-child) {
+    max-width: 560px;
+    color: #94a3b8;
+    margin-bottom: 26px;
+}
+
+/* ===== 4. BUTTONS ===== */
+
+.button,
 button {
-    background: white;
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 18px;
+    display: inline-block;
+    padding: 13px 24px;
+
+    border: 1px solid #818cf8;
+    border-radius: 9px;
+
+    background: #818cf8;
+    color: #0b1120;
+
+    font: inherit;
+    font-weight: bold;
     cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+.button:hover,
+button:hover {
+    transform: translateY(-3px);
+    background: #a5b4fc;
+}
+
+/* ===== 5. ABOUT SECTION ===== */
+
+#about {
+    background: #111a2d;
+}
+
+section h2 {
+    font-size: 34px;
+    margin-bottom: 22px;
+}
+
+#about p,
+#contact p {
+    max-width: 680px;
+    color: #b7c3d5;
+}
+
+/* ===== 6. SKILLS SECTION ===== */
+
+#skills ul {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 16px;
+    list-style: none;
+}
+
+#skills li {
+    padding: 22px;
+    border: 1px solid #293750;
+    border-radius: 12px;
+    background: #111a2d;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+#skills li:hover {
+    transform: translateY(-4px);
+    border-color: #818cf8;
+}
+
+/* ===== 7. CONTACT SECTION ===== */
+
+#contact {
+    background: #111a2d;
+}
+
+#contact button {
+    margin-top: 22px;
+}
+
+#message {
+    margin-top: 16px;
+    color: #a5b4fc;
+}
+
+/* ===== 8. FOOTER ===== */
+
+footer {
+    padding: 28px 8%;
+    text-align: center;
+    color: #94a3b8;
+    border-top: 1px solid #263247;
+    font-size: 14px;
+}
+
+/* ===== 9. PHONE / MOBILE DESIGN ===== */
+
+@media (max-width: 600px) {
+    nav {
+        padding: 16px 5%;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    nav div {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    #home {
+        min-height: 70vh;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ===== LIGHT MODE ===== */
+
+body.light-mode {
+    background: #f8fafc;
+    color: #172033;
+}
+
+body.light-mode nav {
+    background: rgba(248, 250, 252, 0.96);
+    border-bottom-color: #dbe3ef;
+}
+
+body.light-mode nav a {
+    color: #334155;
+}
+
+body.light-mode nav a:hover {
+    color: #4f46e5;
+}
+
+body.light-mode nav h2 {
+    color: #4f46e5;
+}
+
+body.light-mode #home {
+    background: radial-gradient(
+        circle at 80% 20%,
+        #e0e7ff 0,
+        transparent 55%
+    );
+}
+
+body.light-mode #home h2 {
+    color: #334155;
+}
+
+body.light-mode #home > p:not(:first-child) {
+    color: #475569;
+}
+
+body.light-mode #about,
+body.light-mode #contact {
+    background: #eef2ff;
+}
+
+body.light-mode #about p,
+body.light-mode #contact p {
+    color: #475569;
+}
+
+body.light-mode #skills li {
+    background: white;
+    border-color: #dbe3ef;
+}
+
+body.light-mode footer {
+    color: #475569;
+    border-top-color: #dbe3ef;
+}
+
+
+/* PROFILE PHOTO */
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #818cf8;
+    margin-bottom: 25px;
+    box-shadow: 0 0 30px #818cf833;
 }
