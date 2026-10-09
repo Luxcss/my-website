@@ -1,22 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Website</title>
+    <title>Joha | My Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Hello! I'm Joha</h1>
-    <p>Welcome to my website!</p>
+    <nav>
+        <h2>Joha.</h2>
 
-     <button onclick="sayHello()">Click Me</button>
-     <script src="script.js"></script>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button id="themeToggle" type="button">
+    ☀️ Light Mode
+</button>
+
+    </nav>
+
+    <main>
+        <section id="home">
+           <img src="images/joha.jpg"
+         alt="A photo of Joha"
+         class="profile-photo">
+
+
+            <p>HELLO, EVERYONE!</p>
+            <h1>Hi, I'm Joha.</h1>
+            <h2>A learner. A creator. A dreamer.</h2>
+
+            <p>
+                Welcome to my personal portfolio.
+                I'm learning to build websites and
+                exploring the world of technology.
+            </p>
+
+            <a href="#about" class="button">
+                Get to know me
+            </a>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                I'm a student who enjoys learning new
+                skills and exploring technology.
+                This website is where I'll share my
+                journey, interests, and projects.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+
+            <ul>
+                <li>HTML — Learning</li>
+                <li>CSS — Learning</li>
+                <li>JavaScript — Coming soon</li>
+                <li>Music — Drums and Guitar</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <p>Thanks for visiting my portfolio!</p>
+
+            <button id="helloButton">
+                Say Hello
+            </button>
+
+            <p id="message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Joha. Built by Joha Himself.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
-
 </html>
